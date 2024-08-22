@@ -1,9 +1,9 @@
 from sqlalchemy import Column, Integer, String, Boolean
-from config.database import Base
+from config.database import base
 
-class Bicicleta(Base):
+class Bicicleta(base):
     __tablename__ = "bicicleta"
 
-    id = Column(Integer, primary_key=True, index=True)
-    modelo = Column(String, nullable=True)
+    id_bici = Column(Integer, primary_key=True, index=True)
+    modelo = Column(String(50), nullable=True)
     disponible = Column(Boolean, default=True)

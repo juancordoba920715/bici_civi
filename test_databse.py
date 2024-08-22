@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+"""from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 DATABASE_URL = "mysql+pymysql://root:@localhost:3306/bike"
@@ -14,4 +14,4 @@ def test_connection():
     except Exception as e:
         print(f"Error de conexion: {e}")
 
-test_connection()
+test_connection()"""

@@ -1,17 +1,22 @@
 from typing import Optional
 from pydantic import BaseModel
+from sqlalchemy import Boolean
 
-def create_bici(BaseModel):
+
+
+class create_bici(BaseModel):
     id:int
     modelo:str
+    disponile:Boolean
     
-def obtener_bici(BaseModel):
-    id:int
-    modelo:str
+    class config:
+        orm_mode:True
     
-def actualizar_bici(BaseModel):
-    id:int  
-    modelo:Optional[str]
+class obtener_bici(create_bici):
+    pass
     
-def eliminar_bici():
-    id:int
+class actualizar_bici(create_bici):
+    pass
+    
+class eliminar_bici(create_bici):
+    pass

@@ -1,27 +1,24 @@
 from typing import Optional
 from pydantic import BaseModel
 
-def create_user(BaseModel):
-    id:int
-    nombre:str
-    email:str
-    telefono:int
-    direccion:str
+
+class UserBase(BaseModel):
+    id_documento:Optional[int]=None
+    nombre: str
+    email: str  # el Field es para validaciones
+    contrasena: str
+    telefono: int
+    direccion: str
     
-def obtener_user(BaseModel):
-    id:int
-    nombre:str
-    direccion:Optional[str]
+    class config:
+        orm_mode=True
     
-def actualizar_user(BaseModel):
-    id:int  
-    nombre:Optional[str]
-    email:Optional[str]
-    telefono:Optional[int]
-    direccion:Optional[str]
+class UserCreate(UserBase):
+    pass
     
-def eliminar_user():
-    id:int
+class UserResponse(UserBase):
+    pass
+    
     
 
     
